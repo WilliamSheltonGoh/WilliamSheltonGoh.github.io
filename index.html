@@ -99,7 +99,47 @@
   .contact-item a {
     text-decoration: none;
   }
-  
+
+        .qr-code-popup {
+            position: absolute;
+            bottom: 110%;
+            left: 50%;
+            transform: translateX(-50%) scale(0.9);
+            background: white;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .contact-card:hover .qr-code-popup {
+            opacity: 1;
+            transform: translateX(-50%) scale(1);
+        }
+
+        .qr-code-popup img {
+            width: 150px;
+            height: 150px;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .qr-code-popup::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid white;
+        }
+
   /* 小而长的按钮样式 */
   .notes-view-all {
     margin-top: 1.5rem;
@@ -199,7 +239,9 @@
             <div>
               <div class="lang-en">WeChat:</div>
               <div class="lang-zh">微信：</div>
-              <span>YourWeChatID</span>
+                <div class="qr-code-popup">
+                    <img src="person/Wechat-QR.jpg" alt="WeChat QR Code" loading="lazy">
+                </div>
             </div>
           </div>
           <div class="contact-item">
