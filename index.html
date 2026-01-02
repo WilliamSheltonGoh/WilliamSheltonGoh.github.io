@@ -58,6 +58,57 @@
     margin-top: 1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
+
+/* 文字hover显示图片的容器样式 */
+.wechat-text-hover {
+  position: relative; /* 作为图片弹窗的父容器 */
+  color: #07c160; /* 微信绿文字，可选 */
+  cursor: pointer; /* 鼠标移上去变手型 */
+  text-decoration: underline; /* 下划线提示可交互 */
+}
+
+/* 隐藏的图片弹窗 */
+.wechat-img-popup {
+  position: absolute;
+  top: 120%; /* 图片显示在文字下方（改bottom则显示在上方） */
+  left: 50%;
+  transform: translateX(-50%) scale(0.9);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  z-index: 999; /* 确保不被遮挡 */
+  background: white;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* 鼠标hover文字时显示图片 */
+.wechat-text-hover:hover .wechat-img-popup {
+  opacity: 1;
+  transform: translateX(-50%) scale(1);
+}
+
+/* 图片样式（按需调整尺寸） */
+.wechat-img-popup img {
+  width: 200px; /* 图片宽度，可改 */
+  height: auto;
+  border-radius: 4px;
+}
+
+/* 可选：加个小三角指向文字 */
+.wechat-img-popup::after {
+  content: '';
+  position: absolute;
+  bottom: auto;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-bottom: 8px solid white;
+}
+
   
   /* 联系方式样式 */
   .contact-info {
@@ -100,45 +151,7 @@
     text-decoration: none;
   }
 
-        .qr-code-popup {
-            position: absolute;
-            bottom: 110%;
-            left: 50%;
-            transform: translateX(-50%) scale(0.9);
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .contact-card:hover .qr-code-popup {
-            opacity: 1;
-            transform: translateX(-50%) scale(1);
-        }
-
-        .qr-code-popup img {
-            width: 150px;
-            height: 150px;
-            display: block;
-            border-radius: 8px;
-        }
-
-        .qr-code-popup::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid white;
-        }
+  
 
   /* 小而长的按钮样式 */
   .notes-view-all {
@@ -231,7 +244,6 @@
             <div>
               <div class="lang-en">Work Email:124090681@link.cuhk.edu.cn</div>
               <div class="lang-zh">工作邮箱：124090681@link.cuhk.edu.cn</div>
-              <a href="mailto:work.email@company.com">work.email@company.com</a>
             </div>
           </div>
           <div class="contact-item">
@@ -239,9 +251,14 @@
             <div>
               <div class="lang-en">WeChat:</div>
               <div class="lang-zh">微信：</div>
-                <div class="qr-code-popup">
-                    <img src="person/Wechat-QR.jpg" alt="WeChat QR Code" loading="lazy">
-                </div>
+   
+           <p>请查看我的<span class="wechat-text-hover">wechat
+        <div class="wechat-img-popup">
+          <img src="person/Wechat-QR.jpg" alt="我的微信图片" loading="lazy">
+        </div>
+        </span></p>
+            
+            
             </div>
           </div>
           <div class="contact-item">
