@@ -14,6 +14,37 @@
   .kai-font {
     font-family: "楷体", "KaiTi_GB2312", "SimKai", "STKaiti", "Microsoft YaHei", sans-serif;
   }
+
+
+
+/* 容器样式 - 相对定位用于图片的绝对定位参考 */
+        .qrcode-wrapper {
+            position: relative;
+            display: inline-block; /* 保持行内元素特性，文字占一行 */
+            font-size: 16px;
+            color: #2d7ff9; /* 文字颜色，可自定义 */
+            cursor: pointer; /* 鼠标悬浮显示手型 */
+            text-decoration: underline; /* 下划线提示可交互 */
+        }
+
+        /* 二维码图片默认隐藏 */
+        .qrcode-img {
+            position: absolute;
+            top: 25px; /* 图片在文字下方25px处显示 */
+            left: 0;
+            display: none; /* 默认隐藏 */
+            width: 150px; /* 图片宽度，可自定义 */
+            height: 150px; /* 图片高度，可自定义 */
+            border: 1px solid #eee;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 轻微阴影提升质感 */
+            z-index: 9999; /* 确保图片在最上层显示 */
+        }
+
+        /* 鼠标悬浮到文字上时显示图片 */
+        .qrcode-wrapper:hover .qrcode-img {
+            display: block;
+        }
   
   /* 按钮组样式 */
   .button-group {
@@ -59,55 +90,7 @@
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
   }
 
-/* 文字hover显示图片的容器样式 */
-.wechat-text-hover {
-  position: relative; /* 作为图片弹窗的父容器 */
-  color: #07c160; /* 微信绿文字，可选 */
-  cursor: pointer; /* 鼠标移上去变手型 */
-  text-decoration: underline; /* 下划线提示可交互 */
-}
 
-/* 隐藏的图片弹窗 */
-.wechat-img-popup {
-  position: absolute;
-  top: 120%; /* 图片显示在文字下方（改bottom则显示在上方） */
-  left: 50%;
-  transform: translateX(-50%) scale(0.9);
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  z-index: 999; /* 确保不被遮挡 */
-  background: white;
-  padding: 8px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* 鼠标hover文字时显示图片 */
-.wechat-text-hover:hover .wechat-img-popup {
-  opacity: 1;
-  transform: translateX(-50%) scale(1);
-}
-
-/* 图片样式（按需调整尺寸） */
-.wechat-img-popup img {
-  width: 200px; /* 图片宽度，可改 */
-  height: auto;
-  border-radius: 4px;
-}
-
-/* 可选：加个小三角指向文字 */
-.wechat-img-popup::after {
-  content: '';
-  position: absolute;
-  bottom: auto;
-  top: -8px;
-  left: 50%;
-  transform: translateX(-50%);
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-bottom: 8px solid white;
-}
 
   
   /* 联系方式样式 */
@@ -246,21 +229,18 @@
               <div class="lang-zh">工作邮箱：124090681@link.cuhk.edu.cn</div>
             </div>
           </div>
+          
           <div class="contact-item">
             <span>💬</span>
             <div>
               <div class="lang-en">WeChat:</div>
               <div class="lang-zh">微信：</div>
-   
-           <p>请查看我的<span class="wechat-text-hover">wechat
-        <div class="wechat-img-popup">
-          <img src="person/Wechat-QR.jpg" alt="我的微信图片" loading="lazy">
-        </div>
-        </span></p>
-            
-            
-            </div>
-          </div>
+               <div class="qrcode-wrapper">
+                  查看我的PhotoQRCODE
+                  <img class="qrcode-img" src="person/Wechat-QR.jpg" alt="My WeChat pictures">
+               </div>
+           </div>
+  
           <div class="contact-item">
             <span>📺</span>
             <div>
@@ -336,7 +316,6 @@
             <span class="lang-zh">打开论文分享</span>
           </a>
           
-          <img src="B.jpg" alt="Recent research snapshot" loading="lazy">
         </div>
       </div>
     </section>
