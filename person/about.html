@@ -379,98 +379,6 @@
             line-height: 1.6;
         }
 
-        /* Contact 区域 */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-
-        .contact-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-
-        .contact-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-        }
-
-        .contact-icon {
-            width: 70px;
-            height: 70px;
-            background: linear-gradient(135deg, #87ceeb 0%, #5f9ea0 100%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2em;
-            margin: 0 auto 20px;
-            color: white;
-        }
-
-        .contact-icon img {
-            width: 50px;
-            height: 50px;
-            object-fit: contain;
-        }
-
-        .contact-card h3 {
-            font-size: 1.3em;
-            color: #333;
-            margin-bottom: 10px;
-        }
-
-        .contact-card p {
-            color: #666;
-            font-size: 0.95em;
-        }
-
-        .qr-code-popup {
-            position: absolute;
-            bottom: 110%;
-            left: 50%;
-            transform: translateX(-50%) scale(0.9);
-            background: white;
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-            opacity: 0;
-            pointer-events: none;
-            transition: all 0.3s ease;
-            z-index: 10;
-        }
-
-        .contact-card:hover .qr-code-popup {
-            opacity: 1;
-            transform: translateX(-50%) scale(1);
-        }
-
-        .qr-code-popup img {
-            width: 150px;
-            height: 150px;
-            display: block;
-            border-radius: 8px;
-        }
-
-        .qr-code-popup::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 0;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-top: 8px solid white;
-        }
-
         /* 页脚 - 与主页一致 */
         .footer {
             background: linear-gradient(135deg, #87ceeb 0%, #5f9ea0 100%);
@@ -554,8 +462,7 @@
                 margin-bottom: 5px;
             }
 
-            .locations-grid,
-            .contact-grid {
+            .locations-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -579,8 +486,7 @@
         @media print {
             .header,
             .footer,
-            .scroll-indicator,
-            .qr-code-popup {
+            .scroll-indicator {
                 display: none;
             }
 
@@ -589,8 +495,7 @@
             }
 
             .about-grid,
-            .location-card,
-            .contact-card {
+            .location-card {
                 box-shadow: none;
                 border: 1px solid #ddd;
             }
@@ -606,7 +511,6 @@
                 <ul class="nav-menu">
                     <li><a href="#about" class="lang-en">About</a><a href="#about" class="lang-zh">关于</a></li>
                     <li><a href="#locations" class="lang-en">Locations</a><a href="#locations" class="lang-zh">所在地</a></li>
-                    <li><a href="#contact" class="lang-en">Contact</a><a href="#contact" class="lang-zh">联系</a></li>
                 </ul>
             </nav>
             <div class="lang-buttons">
@@ -684,7 +588,7 @@
                         Ningbo → Shenzhen
                     </p>
                     <p class="bio-text lang-zh">
-                        宁波 → 深圳
+                        我喜欢和平精英！！！从宁波到深圳的生活轨迹里，这款游戏是我日常休闲时光里不可或缺的一部分。无论是和好友组队开黑，还是独自探索海岛、雨林等不同地图，都能让我感受到竞技的乐趣和放松的快乐。游戏里的每一次策略制定、每一次精准射击，都能带给我满满的成就感，也让我在忙碌的生活中找到了属于自己的解压方式。
                     </p>
                 </div>
             </div>
@@ -715,67 +619,9 @@
             
             <div class="location-card fade-in">
                 <div class="location-icon">📍</div>
-                <h3>Berlin, Germany</h3>
-                <p class="lang-en">Berlin</p>
-                <p class="lang-zh">柏林</p>
-            </div>
-            
-            <div class="location-card fade-in">
-                <div class="location-icon">📍</div>
                 <h3>Singapore</h3>
                 <p class="lang-en">Singapore</p>
                 <p class="lang-zh">新加坡</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 联系信息 -->
-    <section id="contact" class="container section">
-        <h2 class="section-title fade-in">
-            <span class="lang-en">Get In Touch</span>
-            <span class="lang-zh">联系我</span>
-        </h2>
-        
-        <div class="contact-grid">
-            <!-- 邮箱 -->
-            <div class="contact-card fade-in">
-                <div class="contact-icon">✉️</div>
-                <h3 class="lang-en">Email</h3>
-                <h3 class="lang-zh">邮箱</h3>
-                <p>WilliamWu2005@outlook.com</p>
-            </div>
-            
-            <!-- B站 -->
-            <div class="contact-card fade-in">
-                <div class="contact-icon">
-                    <img src="bilibili.jpg" alt="Bilibili" loading="lazy">
-                </div>
-                <h3 class="lang-en">Bilibili</h3>
-                <h3 class="lang-zh">哔哩哔哩</h3>
-                <p>浦东宁宁</p>
-            </div>
-            
-            <!-- QQ -->
-            <div class="contact-card fade-in">
-                <div class="contact-icon">💬</div>
-                <h3>QQ</h3>
-                <p class="lang-en">id: 1756422676 or view QR</p>
-                <p class="lang-zh">id: 1756422676 或查看二维码</p>
-                <div class="qr-code-popup">
-                    <img src="QQ-QR.jpg" alt="QQ QR Code" loading="lazy">
-                </div>
-            </div>
-            
-            <!-- 微信 -->
-            <div class="contact-card fade-in">
-                <div class="contact-icon">💬</div>
-                <h3 class="lang-en">WeChat</h3>
-                <h3 class="lang-zh">微信</h3>
-                <p class="lang-en">id: winterlingWu or view QR</p>
-                <p class="lang-zh">id: winterlingWu 或查看二维码</p>
-                <div class="qr-code-popup">
-                    <img src="Wechat-QR.jpg" alt="WeChat QR Code" loading="lazy">
-                </div>
             </div>
         </div>
     </section>
