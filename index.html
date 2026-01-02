@@ -61,46 +61,42 @@
   
   /* 联系方式样式 */
   .contact-info {
-    margin-top: 1.5rem;
-    padding: 1.2rem;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 8px;
-    color: white;
+    margin-top: 1rem;
+    padding: 0.8rem;
+    border-radius: 6px;
   }
   
   .contact-info h3 {
     margin-top: 0;
-    margin-bottom: 1rem;
-    color: white;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
   }
   
   .contact-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 0.6rem;
   }
   
   .contact-item {
     display: flex;
     align-items: center;
-    gap: 0.5rem;
-    padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.1);
+    gap: 0.4rem;
+    padding: 0.4rem;
     border-radius: 4px;
     transition: all 0.3s ease;
+    font-size: 0.9rem;
   }
   
   .contact-item:hover {
-    background: rgba(255, 255, 255, 0.2);
-    transform: translateX(5px);
+    transform: translateX(3px);
   }
   
   .contact-item span {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
   
   .contact-item a {
-    color: white;
     text-decoration: none;
   }
   
@@ -141,7 +137,7 @@
         <ul>
           <li><a href="#about" class="lang-en">About</a><a href="#about" class="lang-zh">关于</a></li>
           <li><a href="#education" class="lang-en">Education</a><a href="#education" class="lang-zh">教育</a></li>
-          <li><a href="#research" class="lang-en">Research</a><a href="#research" class="lang-zh">科研经历</a></li>
+          <li><a href="#experience" class="lang-en">Experience</a><a href="#experience" class="lang-zh">经历</a></li>
           <li><a href="#notes" class="lang-en">Lecture notes</a><a href="#notes" class="lang-zh">笔记与讲义</a></li>
           <li><a href="#projects" class="lang-en">Projects</a><a href="#projects" class="lang-zh">项目</a></li>
           <li><a href="#blog" class="lang-en">Blog</a><a href="#blog" class="lang-zh">博客</a></li>
@@ -191,19 +187,11 @@
         <h3 class="lang-zh">📧 联系方式</h3>
         <div class="contact-grid">
           <div class="contact-item">
-            <span>📧</span>
-            <div>
-              <div class="lang-en">Google Email:</div>
-              <div class="lang-zh">谷歌邮箱：</div>
-              <a href="adolf.william.shelton@gmail.com">your.email@gmail.com</a>
-            </div>
-          </div>
-          <div class="contact-item">
             <span>💼</span>
             <div>
-              <div class="lang-en">Work Email(outlook):</div>
-              <div class="lang-zh">工作邮箱(outlook)：</div>
-              <a href="124090681@link.cuhk.edu.cn">work.email@company.com</a>
+              <div class="lang-en">Work Email:124090681@link.cuhk.edu.cn</div>
+              <div class="lang-zh">工作邮箱：124090681@link.cuhk.edu.cn</div>
+              <a href="mailto:work.email@company.com">work.email@company.com</a>
             </div>
           </div>
           <div class="contact-item">
@@ -211,7 +199,7 @@
             <div>
               <div class="lang-en">WeChat:</div>
               <div class="lang-zh">微信：</div>
-              <span>See my picture</span>
+              <span>YourWeChatID</span>
             </div>
           </div>
           <div class="contact-item">
@@ -220,6 +208,14 @@
               <div class="lang-en">BiliBili:</div>
               <div class="lang-zh">哔哩哔哩：</div>
               <a href="https://space.bilibili.com/your_uid" target="_blank" rel="noopener noreferrer">@YourBilibiliName</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span>🎓</span>
+            <div>
+              <div class="lang-en">Google Scholar:Still developing</div>
+              <div class="lang-zh">谷歌学术：Still developing</div>
+              <a href="https://scholar.google.com/citations?user=YOUR_ID" target="_blank" rel="noopener noreferrer">View Profile</a>
             </div>
           </div>
         </div>
@@ -245,15 +241,15 @@
       <h3 class="lang-en"><font color="purple">Specialties and directions</font></h3>                  
       <h3 class="lang-zh"><font color="purple">专业与方向</font></h3>
       
-      <h4 class="lang-en">Middle school: Physics, Chemistry, Politics;</h4>      
+      <h4 class="lang-en">Middle school:  Physics, Chemistry, Politics;</h4>      
       <h4 class="lang-zh">中学：物理化学政治；</h4>
-      <h4 class="lang-en">Undergraduate: Engineering-Bachelor of Engineering in Computer Science(Minor in Mathematics and Applied Mathematics); Master: To be determined</h4>                  
+      <h4 class="lang-en">Undergraduate: Engineering - Bachelor of Engineering in Computer Science(Minor in Mathematics and Applied Mathematics); Master: To be determined</h4>                  
       <h4 class="lang-zh">本科：工程科学·工学学士-计算机科学与技术（副修数学与应用数学）；</h4>
     </section>
 
-    <!-- 科研与研究分享版块 -->
-    <section id="research">
-      <h2 style="color: #FF6B6B;" class="lang-en">Research, Internship, Conference and Work &#128200;</h2>
+    <!-- 合并后的科研与研究分享版块 -->
+    <section id="experience">
+      <h2 style="color: #FF6B6B;" class="lang-en">Experience &#128200;</h2>
       <h2 style="color: #FF6B6B;" class="lang-zh">科研、实习、会议与工作经历 &#128200;</h2>
       
       <div class="research-unified-container">
@@ -281,6 +277,7 @@
             <span class="lang-zh">打开论文分享</span>
           </a>
           
+          <img src="B.jpg" alt="Recent research snapshot" loading="lazy">
         </div>
       </div>
     </section>
@@ -359,7 +356,7 @@
    
     <!-- 滚动字幕 -->
     <div class="scrolling-text" aria-hidden="true">
-      <span>一個人的命運啊，當然要靠自我奮鬥，但是也要考慮到歷史的行程 • A person's fate, of course, depends on their own efforts, but they also have to consider the course of history.• </span>
+      <span>一個人的命運啊，當然要靠自我奮鬥，但是也要考慮到歷史的行程 • A person's fate, of course depends on their own efforts, but also needs to take into account the Course of History.• </span>
     </div>
   </footer>
 
