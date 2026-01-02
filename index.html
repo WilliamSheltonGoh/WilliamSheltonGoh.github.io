@@ -14,6 +14,50 @@
   .kai-font {
     font-family: "楷体", "KaiTi_GB2312", "SimKai", "STKaiti", "Microsoft YaHei", sans-serif;
   }
+  
+  /* 按钮组样式 */
+  .button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    margin-top: 1rem;
+  }
+  
+  .button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+  
+  /* 合并后的研究板块样式 */
+  .research-unified-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .research-highlight-box {
+    background: linear-gradient(135deg, #FFB347 0%, #FF6B6B 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  }
+  
+  .research-highlight-box h3 {
+    margin-top: 0;
+    color: white;
+  }
+  
+  .research-highlight-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 6px;
+    margin-top: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
 </style>
 
   <header>
@@ -60,21 +104,17 @@
          
           <p class="lang-zh"><div class="kai-font">一個人的命運啊，當然要靠自我奮鬥，但是也要考慮到歷史的行程</div></p> 
           
-          <a href="person/about.html" target="_blank" rel="noopener noreferrer" class="button lang-en">Learn More</a>
-          <a href="person/hr.html" target="_blank" rel="noopener noreferrer" class="button lang-en">For HR & Professors</a>
-          <a href="person/about.html" target="_blank" rel="noopener noreferrer" class="button lang-zh">了解更多</a>
-          <a href="person/hr.html" target="_blank" rel="noopener noreferrer" class="button lang-zh">为HR与教授</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="recent-updates">
-      <h2 class="lang-en">Recent Updates</h2>
-      <h2 class="lang-zh">最近動態</h2>
-      <div class="recent-updates">
-        <div class="update-post">
-          <p class="lang-en">Recently: Prepare for the finalterm exam and College English Test Band 6</p>
-          <p class="lang-zh">最近：准备期末考试和大学英语6级</p>
+          <div class="button-group">
+            <a href="person/about.html" target="_blank" rel="noopener noreferrer" class="button lang-en">Learn More</a>
+            <a href="person/hr.html" target="_blank" rel="noopener noreferrer" class="button lang-en">For HR & Professors</a>
+            <a href="person/papers.html" target="_blank" rel="noopener noreferrer" class="button lang-en">My Papers</a>
+            <a href="person/cv.html" target="_blank" rel="noopener noreferrer" class="button lang-en">Short CV</a>
+            
+            <a href="person/about.html" target="_blank" rel="noopener noreferrer" class="button lang-zh">了解更多</a>
+            <a href="person/hr.html" target="_blank" rel="noopener noreferrer" class="button lang-zh">为HR与教授</a>
+            <a href="person/papers.html" target="_blank" rel="noopener noreferrer" class="button lang-zh">我的论文</a>
+            <a href="person/cv.html" target="_blank" rel="noopener noreferrer" class="button lang-zh">简短简历</a>
+          </div>
         </div>
       </div>
     </section>
@@ -128,24 +168,38 @@
       </div>
     </section>
 
-    <!-- 科研实习与工作经历版块 NEW -->
+    <!-- 合并后的科研与研究分享版块 -->
     <section id="research">
       <h2 style="color: #FF6B6B;" class="lang-en">Research & Work Experience &#128200;</h2>
       <h2 style="color: #FF6B6B;" class="lang-zh">科研实习与工作经历 &#128200;</h2>
-      <div class="research-container">
-        
+      
+      <div class="research-unified-container">
+        <!-- 左侧：教学助理经历 -->
         <div class="research-card">
           <div class="research-header">
             <h3 class="lang-en">Undergraduate Teaching Assistant （USTF）</h3>
             <h3 class="lang-zh">本科生助教（MAT1001）</h3>
-            <span class="research-date"> 2025 Fall</span>
+            <span class="research-date">2025 Fall</span>
           </div>
           <p class="research-institution lang-en">SSE, CUHK-Shenzhen</p>
           <p class="research-institution lang-zh">香港中文大學（深圳）理工學院</p>
-
         </div>
 
-       
+        <!-- 右侧：研究分享亮点 -->
+        <div class="research-highlight-box">
+          <h3 class="lang-en">Recent Research Highlights &#128218;</h3>
+          <h3 class="lang-zh">近期论文研究分享整理 &#128218;</h3>
+          
+          <p class="lang-en">I have organized the key points and quick notes of recent papers related to my research direction and areas of interest.</p>
+          <p class="lang-zh">整理了与我研究方向与兴趣点相关的近期论文要点与快速笔记。</p>
+          
+          <a href="Share.html" class="button" style="background: white; color: #FF6B6B; display: inline-block; margin-top: 0.5rem;">
+            <span class="lang-en">Open Research Share</span>
+            <span class="lang-zh">打开论文分享</span>
+          </a>
+          
+          <img src="B.jpg" alt="Recent research snapshot" loading="lazy">
+        </div>
       </div>
     </section>
 
@@ -167,17 +221,15 @@
         </div>
       </div>
 
-        <div class="notes-view-all">
+      <div class="notes-view-all">
         <a href="lecturenotes.html" class="notes-view-all-btn">
           <span class="lang-en">📚 View All Lecture Notes</span>
           <span class="lang-zh">📚 查看所有讲义笔记</span>
         </a>
       </div>
-
-
     </section>
 
-    <!-- 论文展示版块 - 重新设计 -->
+    <!-- 论文展示版块 -->
     <section id="papers">
       <h2 style="color: #4A90E2;" class="lang-en">Publications and Papers &#128220;</h2>
       <h2 style="color: #4A90E2;" class="lang-zh">论文发表 &#128220;</h2>
@@ -356,33 +408,6 @@
       </div>
     </section>
 
-<!-- 近期论文研究分享整理版块（插入于论文与博客之间） -->
-<section id="research-share" style="margin: 2rem 0; padding: 1rem;">
-  <h2 style="color: #FFB347; margin-bottom: 1.5rem;" class="lang-en">Recent Research Highlights &#128218;</h2>
-  <h2 style="color: #FFB347; margin-bottom: 1.5rem; display: none;" class="lang-zh">近期论文研究分享整理 &#128218;</h2>
-  
-  <!-- 核心：Flex 布局容器 -->
-  <div class="research-share-container" style="display: flex; align-items: flex-start; gap: 2rem; flex-wrap: wrap;">
-    <!-- 文字+按钮 容器（居左） -->
-    <div class="research-share-text" style="flex: 1; min-width: 280px;">
-      <p class="lang-en" style="margin: 0 0 1rem 0; line-height: 1.6;">I have organized the key points and quick notes of recent papers related to my research direction and areas of interest.</p>
-      <p class="lang-zh" style="margin: 0 0 1rem 0; line-height: 1.6; display: none;">整理了与我研究方向与兴趣点相关的近期论文要点与快速笔记。</p>
-      <a href="Share.html" class="button research-share-btn" style="display: inline-block; margin-top: 0.5rem; padding: 0.6rem 1.2rem; background: #FFB347; color: #fff; border: none; border-radius: 4px; text-decoration: none;">
-        <span class="lang-en">Open Research Share</span>
-        <span class="lang-zh" style="display: none;">打开论文分享</span>
-      </a>
-    </div>
-
-    <!-- 图片（居右，缩小尺寸） -->
-    <img src="B.jpg" alt="Recent research snapshot" class="research-share-image" loading="lazy" 
-         style="max-width: 220px; /* 图片缩小（原320px→220px，可按需调整） */
-                width: 100%; /* 响应式适配 */
-                height: auto; /* 保持宽高比，避免变形 */
-                border-radius: 6px;
-                box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* 可选：增加轻微阴影更美观 */">
-  </div>
-</section>
-
     <!-- 博客/评论区版块 -->
     <section id="blog">
       <h2 class="lang-en">Blog</h2>
@@ -412,7 +437,7 @@
    
     <!-- 滚动字幕 -->
     <div class="scrolling-text" aria-hidden="true">
-      <span>WinterLing William Shelton • WinterLing William Shelton • WinterLing William Shelton • WinterLing William Shelton • </span>
+      <span>一個人的命運啊，當然要靠自我奮鬥，但是也要考慮到歷史的行程 • 一個人的命運啊，當然要靠自我奮鬥，但是也要考慮到歷史的行程 • 一個人的命運啊，當然要靠自我奮鬥，但是也要考慮到歷史的行程 • </span>
     </div>
   </footer>
 
