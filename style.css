@@ -1,0 +1,358 @@
+/* style.css
+   Designed for: WilliamShelton personal homepage (index.html)
+   Notes: Save next to index.html and update head link to: <link rel="stylesheet" href="style.css">
+*/
+
+/* =========================
+   Variables & Reset
+   ========================= */
+:root{
+  --bg-grad-1: #f0faff;
+  --bg-grad-2: #e6f7ff;
+  --accent-1: #87ceeb;   /* skyblue */
+  --accent-2: #5f9ea0;   /* cadet */
+  --muted: #6b7280;
+  --text: #111827;
+  --card-bg: #ffffff;
+  --glass: rgba(255,255,255,0.6);
+  --max-width: 1200px;
+  --radius: 12px;
+  --shadow-sm: 0 6px 18px rgba(0,0,0,0.08);
+  --shadow-md: 0 12px 28px rgba(0,0,0,0.12);
+  --transition: 250ms cubic-bezier(.2,.9,.3,1);
+  --container-padding: 20px;
+}
+
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; }
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+  color: var(--text);
+  background: linear-gradient(135deg, var(--bg-grad-1) 0%, var(--bg-grad-2) 100%);
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
+  padding-bottom: 60px;
+}
+
+/* Utility container */
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 48px var(--container-padding);
+}
+
+/* Language toggling: body has class lang-en or lang-zh */
+.lang-en .lang-zh { display: none; }
+.lang-zh .lang-en { display: none; }
+
+/* =========================
+   Header / Nav
+   ========================= */
+header {
+  width: 100%;
+  background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+  color: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 120;
+  box-shadow: var(--shadow-sm);
+  transition: padding var(--transition), box-shadow var(--transition);
+  padding: 18px 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: space-between;
+  padding-left: var(--container-padding);
+  padding-right: var(--container-padding);
+}
+
+.name {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  margin-right: 8px;
+  color: white;
+}
+
+#lang-switcher {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255,255,255,0.22);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform var(--transition), background var(--transition);
+}
+#lang-switcher:hover { transform: translateY(-2px); background: rgba(255,255,255,0.05); }
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-left: 12px;
+  flex-wrap: wrap;
+}
+nav a {
+  color: rgba(255,255,255,0.95);
+  text-decoration: none;
+  font-weight: 600;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background var(--transition), color var(--transition);
+}
+nav a:hover { background: rgba(255,255,255,0.12); color: #fff; }
+
+/* Shrinkified header when scrolled */
+header.scrolled { padding: 10px 0; box-shadow: var(--shadow-md); }
+
+/* =========================
+   Hero / Intro
+   ========================= */
+main .about,
+main > section {
+  margin-bottom: 56px;
+}
+
+.about {
+  /* keep container spacing consistent */
+}
+
+.intro {
+  display: flex;
+  gap: 32px;
+  align-items: flex-start;
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: calc(var(--radius) + 6px);
+  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: transform var(--transition);
+}
+
+/* Avatar */
+.avatar {
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 4px solid var(--accent-1);
+  box-shadow: 0 10px 30px rgba(135,206,235,0.15);
+  flex-shrink: 0;
+}
+
+/* Intro text */
+.intro-text { flex: 1; min-width: 200px; }
+.intro-text h3 { font-weight: 600; margin-bottom: 6px; color: var(--accent-2); }
+.intro-text p { color: var(--muted); margin-top: 12px; font-size: 0.98rem; }
+
+/* signature (kai-font class already provided inline) */
+.kai-font { font-family: "KaiTi", "STKaiti", "SimKai", "Microsoft YaHei", serif; font-size: 0.98rem; color: #444; }
+
+/* Buttons */
+a.button {
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 8px;
+  background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 12px;
+  margin-right: 8px;
+  transition: transform var(--transition), box-shadow var(--transition);
+  box-shadow: 0 6px 18px rgba(95,158,160,0.12);
+}
+a.button:hover { transform: translateY(-3px); box-shadow: 0 18px 40px rgba(95,158,160,0.12); }
+
+/* secondary neutral button */
+a.button.secondary {
+  background: #f5f7fb;
+  color: var(--text);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: none;
+}
+
+/* notes view all button (matching inline expectations) */
+.notes-view-all .notes-view-all-btn {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  width: 320px;
+  height: 36px;
+  line-height: 36px;
+  text-align: center;
+  border-radius: 6px;
+  background: #f0f0f0;
+  color: #111;
+  text-decoration: none;
+  font-size: 0.95rem;
+  box-shadow: none;
+}
+
+/* =========================
+   Contact list & QR
+   ========================= */
+.contact-list { display:flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 12px; }
+.contact-item {
+  position: relative;
+  padding: 10px 12px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.03);
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* WeChat hover qrcode already had inline style; provide robust container styling */
+.wechat-qrcode {
+  display: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: calc(100% + 10px);
+  width: 200px;
+  background: white;
+  border: 1px solid rgba(0,0,0,0.08);
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  z-index: 30;
+}
+.contact-item.wechat:hover .wechat-qrcode,
+.contact-item.wechat:focus-within .wechat-qrcode { display: block; }
+
+/* Contact cards in about.html style */
+.contact-card { background: var(--card-bg); padding: 22px; border-radius: 12px; box-shadow: var(--shadow-sm); transition: transform var(--transition); }
+.contact-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-md); }
+
+/* =========================
+   Education / Lists
+   ========================= */
+.education-list { list-style: none; margin-top: 12px; }
+.education-list li { display:flex; gap: 12px; padding: 12px 0; border-bottom: 1px dashed rgba(0,0,0,0.04); align-items:center; }
+.education-time { color: var(--accent-2); font-weight:700; width:120px; flex-shrink:0; }
+.education-info { color: var(--muted); }
+
+/* =========================
+   Research / Cards
+   ========================= */
+.research-container { display:flex; gap: 18px; flex-wrap:wrap; margin-top: 12px; }
+.research-card {
+  background: var(--card-bg);
+  padding: 18px;
+  border-radius: 12px;
+  min-width: 260px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--accent-1);
+}
+.research-header { display:flex; justify-content:space-between; gap:12px; align-items:flex-start; }
+.research-date { color: var(--muted); font-size: 0.9rem; }
+
+/* =========================
+   Notes / Projects / Blog
+   ========================= */
+.notes-container, .projects-container { display:grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 18px; margin-top: 14px; }
+.notes-card, .project-card, .blog-post {
+  background: var(--card-bg);
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+}
+.blog-post p { color: var(--muted); }
+
+/* =========================
+   Locations grid
+   ========================= */
+.locations-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 18px; margin-top: 14px; }
+.location-card { background: var(--card-bg); padding: 20px; border-radius: 12px; box-shadow: var(--shadow-sm); border-left: 4px solid var(--accent-1); transition: transform var(--transition); }
+.location-card:hover { transform: translateY(-8px); border-left-color: var(--accent-2); box-shadow: var(--shadow-md); }
+.location-icon { width:60px; height:60px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.8rem; background: linear-gradient(135deg,#e6f7ff,#d0efff); margin-bottom:12px; }
+
+/* =========================
+   Footer / Scrolling text
+   ========================= */
+footer {
+  margin-top: 40px;
+  padding: 28px 0;
+  background: linear-gradient(135deg,var(--accent-1),var(--accent-2));
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.scrolling-text {
+  overflow: hidden;
+  white-space: nowrap;
+  margin-top: 12px;
+  padding: 8px 0;
+}
+.scrolling-text span {
+  display: inline-block;
+  padding-left: 100%;
+  animation: scroll-left 20s linear infinite;
+}
+@keyframes scroll-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* =========================
+   Small interactions & animations
+   ========================= */
+.paper-card { transition: opacity 0.28s ease, transform 0.28s ease; }
+.fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+/* QR popup used in about.html and index */
+.qr-code-popup {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%) scale(0.95);
+  background: white;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 180ms ease;
+  z-index: 40;
+}
+.contact-card:hover .qr-code-popup { opacity: 1; pointer-events: auto; transform: translateX(-50%) scale(1); }
+
+/* =========================
+   Accessibility tweaks
+   ========================= */
+a, button { outline-offset: 3px; }
+a:focus, button:focus { box-shadow: 0 0 0 3px rgba(135,206,235,0.18); border-radius: 8px; }
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 900px) {
+  .intro { flex-direction: column; align-items: center; text-align: center; }
+  .avatar { width: 140px; height: 140px; }
+  .intro-text h3 { text-align: center; }
+  nav ul { gap: 12px; }
+  .container { padding: 36px 18px; }
+}
+
+@media (max-width: 600px) {
+  header .container { flex-direction: column; gap: 10px; align-items: stretch; }
+  nav ul { flex-direction: column; align-items: center; }
+  .avatar { width: 120px; height: 120px; }
+  .contact-list { justify-content: center; }
+  .notes-view-all .notes-view-all-btn { width: 100%; max-width: 320px; }
+}
+
+/* Print */
+@media print {
+  body { background: white; color: black; }
+  header, footer, .scrolling-text { display: none; }
+  .intro, .about-grid, .location-card, .contact-card { box-shadow: none; border: 1px solid #e5e7eb; }
+}
