@@ -356,3 +356,101 @@ a:focus, button:focus { box-shadow: 0 0 0 3px rgba(135,206,235,0.18); border-rad
   header, footer, .scrolling-text { display: none; }
   .intro, .about-grid, .location-card, .contact-card { box-shadow: none; border: 1px solid #e5e7eb; }
 }
+
+/* ====== Adjust header size & spacing (smaller header) ====== */
+/* This block tightens the header without changing layout logic */
+header {
+  padding: 10px 0;               /* reduce vertical size */
+  transition: padding var(--transition), box-shadow var(--transition);
+}
+header .container {
+  padding-left: 16px;            /* slightly less horizontal padding */
+  padding-right: 16px;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Reduce name prominence but keep visibility and accessibility */
+.name {
+  font-size: 1.05rem;            /* smaller than before */
+  font-weight: 700;
+  line-height: 1;
+  margin-right: 6px;
+}
+
+/* Make navigation more compact */
+nav ul {
+  gap: 12px;
+}
+nav a {
+  font-size: 0.95rem;
+  padding: 6px 8px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* Compact language switcher */
+#lang-switcher {
+  padding: 6px 8px;
+  font-size: 0.92rem;
+  border-radius: 8px;
+}
+
+/* Optional: slightly smaller avatar on narrow screens */
+@media (max-width:900px) {
+  .avatar { width: 140px; height: 140px; }
+}
+
+/* ====== Beautify "View All Lecture Notes" without increasing size ====== */
+/* Keeps width 320px on large screens, but improves visuals and hover */
+.notes-view-all .notes-view-all-btn {
+  width: 320px;                  /* keep original width as requested */
+  height: 36px;
+  line-height: 36px;
+  display: inline-flex;          /* make it easier to align icon + text */
+  align-items: center;
+  justify-content: center;
+  gap: 8px;                      /* space between icon and text */
+  padding: 0 12px;
+  border-radius: 10px;           /* slightly rounder */
+  background: linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%);
+  color: var(--accent-2);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  border: 1px solid rgba(95,158,160,0.14);
+  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.03), 0 6px 16px rgba(95,158,160,0.06);
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
+}
+
+/* hover / focus effects for affordance (slight lift, stronger shadow) */
+.notes-view-all .notes-view-all-btn:hover,
+.notes-view-all .notes-view-all-btn:focus {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 36px rgba(95,158,160,0.12);
+  background: linear-gradient(180deg, #ffffff 0%, #eef7f8 100%);
+  outline: none;
+}
+
+/* Ensure the button still fits small screens without exceeding width */
+@media (max-width: 600px) {
+  .notes-view-all .notes-view-all-btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+}
+
+/* Small tweak to the emoji/icon so it aligns vertically inside the button */
+.notes-view-all .notes-view-all-btn span {
+  display: inline-flex;
+  align-items: center;
+  line-height: 1;
+}
+
+/* Accessibility: visible focus ring */
+.notes-view-all .notes-view-all-btn:focus-visible {
+  box-shadow: 0 0 0 4px rgba(135,206,235,0.18);
+  border-color: var(--accent-2);
+}
+
