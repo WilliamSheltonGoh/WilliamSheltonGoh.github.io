@@ -949,9 +949,27 @@
             font-size: 0.92rem;
         }
 
-        .education-degree,
-        .education-school {
+        .education-primary {
             margin-bottom: 5px;
+            color: #31464a;
+            font-family: inherit;
+            font-size: 1.05rem;
+            font-style: normal;
+            font-weight: 700;
+            line-height: 1.4;
+        }
+
+        .education-secondary,
+        .education-desc {
+            color: #66757a;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-style: normal;
+            line-height: 1.5;
+        }
+
+        .education-secondary {
+            margin-top: 4px;
         }
 
         .academic-record-layout {
@@ -1077,6 +1095,128 @@
                 padding: 15px;
             }
         }
+
+        /* Keep the academic narrative in the intended visual order. */
+        main {
+            display: flex;
+            flex-direction: column;
+        }
+
+        main > .container {
+            width: 100%;
+        }
+
+        #profile { order: 1; }
+        #research { order: 2; }
+        #education { order: 3; }
+        #papers { order: 4; }
+        #academic-record { order: 5; }
+
+        /* Compact academic-performance summary and two-row ranking table. */
+        .academic-performance-summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 14px;
+            padding: 12px 14px;
+            border: 1px solid rgba(95, 158, 160, 0.16);
+            border-radius: 10px;
+            background: #f5fbfc;
+        }
+
+        .cgpa-metric {
+            display: flex;
+            align-items: baseline;
+            gap: 8px;
+        }
+
+        .metric-label {
+            color: #587175;
+            font-size: 0.8rem;
+            font-weight: 750;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .cgpa-metric strong {
+            color: #2e6064;
+            font-size: 1.35rem;
+            line-height: 1;
+        }
+
+        .cgpa-metric strong small {
+            color: #6b7d80;
+            font-size: 0.72rem;
+            font-weight: 600;
+        }
+
+        .academic-certificate {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 9px;
+            border-radius: 7px;
+            background: #e5f5f8;
+            color: #356f74;
+            font-size: 0.79rem;
+            font-weight: 700;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .academic-certificate:hover,
+        .academic-certificate:focus-visible {
+            background: #d8eef2;
+        }
+
+        .academic-table-wrap {
+            overflow-x: auto;
+        }
+
+        .academic-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.86rem;
+        }
+
+        .academic-table th,
+        .academic-table td {
+            padding: 10px 9px;
+            border-bottom: 1px solid #dcebed;
+            text-align: left;
+            vertical-align: middle;
+        }
+
+        .academic-table th {
+            color: #557176;
+            background: #edf8fa;
+            font-size: 0.75rem;
+            font-weight: 800;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        .academic-table tbody tr:last-child td {
+            border-bottom: 0;
+        }
+
+        .academic-table td:first-child {
+            color: #315f63;
+            font-weight: 750;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 560px) {
+            .academic-performance-summary {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .academic-table {
+                min-width: 480px;
+            }
+        }
     </style>
 </head>
 <body class="lang-en">
@@ -1089,8 +1229,8 @@
                     <li><a href="#profile" class="lang-en">Overview</a><a href="#profile" class="lang-zh">概览</a></li>
                     <li><a href="#research" class="lang-en">Research</a><a href="#research" class="lang-zh">研究方向</a></li>
                     <li><a href="#education" class="lang-en">Education</a><a href="#education" class="lang-zh">教育经历</a></li>
-                    <li><a href="#academic-record" class="lang-en">Academic Record</a><a href="#academic-record" class="lang-zh">学术记录</a></li>
                     <li><a href="#papers" class="lang-en">Research Output</a><a href="#papers" class="lang-zh">研究成果</a></li>
+                    <li><a href="#academic-record" class="lang-en">Academic Record</a><a href="#academic-record" class="lang-zh">学术记录</a></li>
                 </ul>
             </nav>
             <div class="lang-buttons">
@@ -1105,7 +1245,7 @@
     <section id="profile" class="container section">
         <h2 class="section-title fade-in">
             <span class="lang-en">Academic Profile</span>
-            <span class="lang-zh">学术档案</span>
+            <span class="lang-zh">Academic Profile</span>
         </h2>
         
         <div class="profile-grid fade-in">
@@ -1146,10 +1286,10 @@
                     <h3 class="lang-en">Research Interests</h3>
                     <h3 class="lang-zh">研究兴趣</h3>
                     <p class="bio-text lang-en">
-                        My research focuses on deep learning and generative models. I'm particularly interested in developing efficient neural network architectures, self-supervised learning methods, and their applications in real-world scenarios such as healthcare and autonomous driving.
+                        My research focuses on deep learning and generative models, as well as artificial intelligence (AI).
                     </p>
                     <p class="bio-text lang-zh">
-                        我的研究方向聚焦于深度学习和生成式模型。尤其关注高效神经网络架构设计、自监督学习方法，以及这些技术在医疗健康、自动驾驶等实际场景中的应用落地。同时热衷于开源社区建设，致力于推动AI技术的民主化和可及性。
+                        我的研究方向聚焦于深度学习和生成式模型，与人工智能（AI）。
                     </p>
                 </div>
             </div>
@@ -1191,7 +1331,7 @@
             <div class="research-card fade-in">
                 <div class="research-icon">🎨</div>
                 <h3 class="lang-en">Sentiment Analysis and Model Reasoning</h3>
-                <h3 class="lang-zh">情感分析与模型推理 </h3>
+                <h3 class="lang-zh">情感分析与模型Reasoning </h3>
                 <p class="lang-en">
                    Provide "EQ" and "IQ" support for the application of embodied intelligence research, and commit to exploring the emotional and reasoning abilities of organisms and life.
                 </p>
@@ -1213,8 +1353,8 @@
         <div class="education-compact-grid">
             <div class="education-item fade-in">
                 <div class="education-period">2021 - 2024</div>
-                <div class="education-school lang-en">Zhejiang Zhenhai High School</div>
-                <div class="education-school lang-zh">浙江省镇海中学</div>
+                <div class="education-primary lang-en">Zhejiang Zhenhai High School</div>
+                <div class="education-primary lang-zh">浙江省镇海中学</div>
                 <div class="education-desc lang-en">
                    Major fields: Physics, Chemistry, Politics
                 </div>
@@ -1225,10 +1365,18 @@
             
             <div class="education-item fade-in">
                 <div class="education-period">2024 - </div>
-                <div class="education-degree lang-en">Bachelor of Computer Science and Technology (Minor in Mathematics and Applied Mathematics)</div>
-                <div class="education-degree lang-zh">计算机科学与技术学士（副修数学与应用数学）</div>
-                <div class="education-school lang-en">The Chinese University of Hong Kong（Shenzhen）,CUHK(SZ)</div>
-                <div class="education-school lang-zh">香港中文大學（深圳），CUHK(SZ)</div>
+                <div class="education-primary lang-en">Bachelor of Computer Science and Technology (Minor in Mathematics and Applied Mathematics)</div>
+                <div class="education-primary lang-zh">计算机科学与技术学士（副修数学与应用数学）</div>
+                <div class="education-secondary lang-en">The Chinese University of Hong Kong（Shenzhen）,CUHK(SZ)</div>
+                <div class="education-secondary lang-zh">香港中文大學（深圳），CUHK(SZ)</div>
+            </div>
+
+            <div class="education-item fade-in">
+                <div class="education-period">2025 Summer</div>
+                <div class="education-primary lang-en">Summer Exchange Program</div>
+                <div class="education-primary lang-zh">暑期交换项目</div>
+                <div class="education-secondary lang-en">Nanyang Technological University, Singapore</div>
+                <div class="education-secondary lang-zh">新加坡南洋理工大学</div>
             </div>
         </div>
     </section>
@@ -1241,90 +1389,66 @@
         </h2>
 
         <div class="academic-record-layout fade-in">
-            <article class="record-panel performance-panel">
+    <article class="record-panel performance-panel">
                 <h3>
                     <span class="lang-en">Academic Performance</span>
                     <span class="lang-zh">成绩与学业</span>
                 </h3>
-<!-- CET-4 -->
-            <div class="transcript-section">
-                <div class="transcript-year">
-                    <span class="lang-en">College English Test Band 4 (CET-4)</span>
-                    <span class="lang-zh">大学英语四级（CET-4）</span>
-                </div>
-                <div class="transcript-grid">
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">Score</div>
-                        <div class="transcript-label lang-zh">成绩</div>
-                        <div class="transcript-image-container">
-                            <img src="transCET4.jpg" alt="CET-4 Score Certificate" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- 第一学年 -->
-            <div class="transcript-section">
-                <div class="transcript-year">
-                    <span class="lang-en">First Academic Year</span>
-                    <span class="lang-zh">第一学年</span>
+                <div class="academic-performance-summary">
+                    <div class="cgpa-metric">
+                        <span class="metric-label lang-en">Current CGPA</span>
+                        <span class="metric-label lang-zh">当前绩点</span>
+                        <strong>3.77<small> / 4.00</small></strong>
+                    </div>
+                    <a class="academic-certificate" href="transCET4.jpg" target="_blank" rel="noopener noreferrer">
+                        <span aria-hidden="true">↗</span>
+                        <span class="lang-en">View CET-4 certificate</span>
+                        <span class="lang-zh">查看 CET-4 证书</span>
+                    </a>
                 </div>
 
-                <div class="transcript-grid">
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">GPA:3.79</div>
-                        <div class="transcript-label lang-zh">绩点:3.79</div>
-                    </div>
-
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">Ranking</div>
-                        <div class="transcript-label lang-zh">排名</div>
-                        <div class="transcript-image-container">
-                            <div class="transcript-text">
-                                <p class="lang-en">
-                                    CGPA ranks 18th among 236 students in Computer Science and Technology<br>
-                                    CGPA ranks 33rd among 570 students in School of Data Science
-                                </p>
-                                <p class="lang-zh">
-                                    CGPA处于计算机科学与技术专业同期236名同学中第18名<br>
-                                    CGPA处于数据科学学院同期570名同学中第33名
-                                </p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="academic-table-wrap">
+                    <table class="academic-table">
+                        <thead>
+                            <tr>
+                                <th><span class="lang-en">Academic year</span><span class="lang-zh">学年</span></th>
+                                <th><span class="lang-en">Major ranking</span><span class="lang-zh">专业排名</span></th>
+                                <th><span class="lang-en">School ranking</span><span class="lang-zh">学院排名</span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                    <tr>
+                        <td>
+                            <span class="lang-en">Year 1 · 2024</span>
+                            <span class="lang-zh">大一 · 2024 学年</span>
+                        </td>
+                        <td>
+                            <span class="lang-en">18/236 · Top 7%</span>
+                            <span class="lang-zh">18/236 · 前 7%</span>
+                        </td>
+                        <td>
+                            <span class="lang-en">33/570 · Top 5%</span>
+                            <span class="lang-zh">33/570 · 前 5%</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="lang-en">Year 2 · 2025</span>
+                            <span class="lang-zh">大二 · 2025 学年</span>
+                        </td>
+                        <td>
+                            <span class="lang-en">24/236 · Top 10%</span>
+                            <span class="lang-zh">24/236 · 前 10%</span>
+                        </td>
+                        <td>
+                            <span class="lang-en">53/571 · Top 9%</span>
+                            <span class="lang-zh">53/571 · 前 9%</span>
+                        </td>
+                    </tr>
+                        </tbody>
+                    </table>
                 </div>
-            </div>
-
-            <!-- 第二学年 -->
-            <div class="transcript-section">
-                <div class="transcript-year">
-                    <span class="lang-en">Second Academic Year</span>
-                    <span class="lang-zh">第二学年</span>
-                </div>
-                <div class="transcript-grid">
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">GPA</div>
-                        <div class="transcript-label lang-zh">绩点</div>
-                        <div class="transcript-image-container">
-                            <div class="transcript-placeholder">
-                                <p class="lang-en">📄 certificate</p>
-                                <p class="lang-zh">📄 绩点证明</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">Ranking</div>
-                        <div class="transcript-label lang-zh">排名</div>
-                        <div class="transcript-image-container">
-                            <div class="transcript-text">
-                                <p class="lang-en">Top ?% in major<br><br>Top ?% in grade</p>
-                                <p class="lang-zh">专业排名前？%<br><br>年级排名前？%</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             </article>
 
             <article class="record-panel honors-panel">
