@@ -33,22 +33,6 @@
       display: block;
     }
 
-    /* Small long button style for notes view all */
-    .notes-view-all .notes-view-all-btn {
-      display: inline-block;
-      padding: 0.35rem 1rem;
-      width: 320px; /* 长而小 */
-      height: 36px;
-      line-height: 36px;
-      text-align: center;
-      border-radius: 6px;
-      background: #f0f0f0;
-      color: #111;
-      text-decoration: none;
-      font-size: 0.95rem;
-      box-shadow: none;
-    }
-
     /* Make paper filtering transitions smoother */
     .paper-card { transition: opacity 0.28s ease, transform 0.28s ease; }
 
@@ -204,24 +188,56 @@
     <section id="notes">
       <h2 style="color: #7F00FF;" class="lang-en">Lecture notes &#128194;</h2>
       <h2 style="color: #7F00FF;" class="lang-zh">讲义与笔记 &#128194;</h2>
+
+      <div class="notes-view-all">
+        <a href="lecturenotes.html" class="notes-view-all-btn">
+          <span class="notes-view-all-icon" aria-hidden="true">📚</span>
+          <span class="notes-view-all-copy">
+            <strong class="lang-en">View all lecture notes</strong>
+            <strong class="lang-zh">查看全部讲义与笔记</strong>
+            <small class="lang-en">Browse the complete notes collection</small>
+            <small class="lang-zh">浏览完整的讲义与笔记合集</small>
+          </span>
+          <span class="notes-view-all-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
       <div class="notes-container">
-        <div class="notes-card">
-          <h3 class="lang-en">Template</h3>
-          <h3 class="lang-zh">模板</h3>
+        <article class="notes-card">
+          <div class="template-card-header">
+            <span class="template-card-icon" aria-hidden="true">⌘</span>
+            <span class="template-index">Template 01</span>
+          </div>
+          <h3 class="lang-en">LaTeX Notes Template</h3>
+          <h3 class="lang-zh">LaTeX 笔记模板</h3>
           <p class="lang-en">General LaTex note/lectureNotes template code</p>
           <p class="lang-zh">通用LaTex笔记/讲义模板代码</p>
           <a href="LN/LaTeXTemplate.zip" 
             download="General LaTeX Template.zip"
             onclick="return confirm('确定要下载吗？/Are you sure you want to download?')"
-            rel="noopener noreferrer">download-MATnotes latextemplate
+            class="template-download"
+            rel="noopener noreferrer">
+            <span class="lang-en">Download template</span>
+            <span class="lang-zh">下载模板</span>
+            <span aria-hidden="true">↓</span>
           </a>
-        </div>
-      </div>
+        </article>
 
-      <div class="notes-view-all">
-        <a href="lecturenotes.html" class="notes-view-all-btn" style="display:inline-block; text-decoration:none;">
-          <span class="lang-en">📚 View All Lecture Notes</span>
-        </a>
+        <article class="notes-card notes-card-placeholder">
+          <div class="template-card-header">
+            <span class="template-card-icon" aria-hidden="true">＋</span>
+            <span class="template-index">Template 02</span>
+          </div>
+          <h3 class="lang-en">New Template Slot</h3>
+          <h3 class="lang-zh">新模板位置</h3>
+          <p class="lang-en">Reserved for the next template file you upload.</p>
+          <p class="lang-zh">已为你之后上传的模板文件预留位置。</p>
+          <span class="template-download is-disabled" aria-disabled="true">
+            <span class="lang-en">File coming soon</span>
+            <span class="lang-zh">等待上传文件</span>
+            <span aria-hidden="true">…</span>
+          </span>
+        </article>
       </div>
     </section>
 

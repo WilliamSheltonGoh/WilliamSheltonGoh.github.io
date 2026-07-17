@@ -179,22 +179,6 @@ a.button.secondary {
   box-shadow: none;
 }
 
-/* notes view all button (matching inline expectations) */
-.notes-view-all .notes-view-all-btn {
-  display: inline-block;
-  padding: 0.35rem 1rem;
-  width: 320px;
-  height: 36px;
-  line-height: 36px;
-  text-align: center;
-  border-radius: 6px;
-  background: #f0f0f0;
-  color: #111;
-  text-decoration: none;
-  font-size: 0.95rem;
-  box-shadow: none;
-}
-
 /* =========================
    Contact list & QR
    ========================= */
@@ -264,6 +248,170 @@ a.button.secondary {
   box-shadow: var(--shadow-sm);
 }
 .blog-post p { color: var(--muted); }
+
+/* Lecture notes entry point and two-slot template grid */
+.notes-view-all {
+  display: flex;
+  margin: 18px 0 22px;
+}
+
+.notes-view-all .notes-view-all-btn {
+  width: min(100%, 560px);
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 13px 16px;
+  border: 1px solid rgba(127, 0, 255, 0.2);
+  border-radius: 16px;
+  background: linear-gradient(135deg, #7f00ff 0%, #a348ff 100%);
+  color: #fff;
+  text-decoration: none;
+  box-shadow: 0 14px 30px rgba(127, 0, 255, 0.2);
+  transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
+}
+
+.notes-view-all .notes-view-all-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 38px rgba(127, 0, 255, 0.28);
+  filter: saturate(1.08);
+}
+
+.notes-view-all .notes-view-all-btn:focus-visible {
+  outline: 3px solid rgba(127, 0, 255, 0.24);
+  outline-offset: 4px;
+}
+
+.notes-view-all-icon {
+  width: 44px;
+  height: 44px;
+  flex: 0 0 44px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 1.35rem;
+}
+
+.notes-view-all-copy {
+  min-width: 0;
+  display: grid;
+  gap: 3px;
+  text-align: left;
+}
+
+.notes-view-all-copy strong {
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.notes-view-all-copy small {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
+}
+
+.notes-view-all-arrow {
+  margin-left: auto;
+  font-size: 1.45rem;
+  line-height: 1;
+  transition: transform 180ms ease;
+}
+
+.notes-view-all-btn:hover .notes-view-all-arrow {
+  transform: translateX(4px);
+}
+
+#notes .notes-container {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 0;
+}
+
+#notes .notes-card {
+  min-height: 210px;
+  display: flex;
+  flex-direction: column;
+  padding: 22px;
+  border: 1px solid rgba(127, 0, 255, 0.12);
+  border-radius: 16px;
+  background: linear-gradient(145deg, #ffffff 0%, #fbf8ff 100%);
+  box-shadow: 0 12px 28px rgba(52, 28, 82, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+#notes .notes-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(127, 0, 255, 0.28);
+  box-shadow: 0 18px 36px rgba(52, 28, 82, 0.12);
+}
+
+.template-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.template-card-icon {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  background: #f0e2ff;
+  color: #7f00ff;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.template-index {
+  color: #7f00ff;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+#notes .notes-card h3 {
+  margin-bottom: 8px;
+}
+
+#notes .notes-card p {
+  margin-bottom: 20px;
+  color: var(--muted);
+}
+
+.template-download {
+  width: fit-content;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  padding: 9px 13px;
+  border-radius: 10px;
+  background: #f0e2ff;
+  color: #6d00d8;
+  font-size: 0.88rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+a.template-download:hover {
+  background: #e6ceff;
+  transform: translateY(-1px);
+}
+
+.template-download.is-disabled {
+  background: #f1f3f6;
+  color: #7c8491;
+  cursor: default;
+}
+
+.notes-card-placeholder {
+  border-style: dashed !important;
+}
 
 /* =========================
    Locations grid
@@ -347,7 +495,9 @@ a:focus, button:focus { box-shadow: 0 0 0 3px rgba(135,206,235,0.18); border-rad
   nav ul { flex-direction: column; align-items: center; }
   .avatar { width: 120px; height: 120px; }
   .contact-list { justify-content: center; }
-  .notes-view-all .notes-view-all-btn { width: 100%; max-width: 320px; }
+  #notes .notes-container { grid-template-columns: 1fr; }
+  .notes-view-all .notes-view-all-btn { width: 100%; }
+  .notes-view-all-copy small { display: none; }
 }
 
 /* Print */
@@ -399,58 +549,5 @@ nav a {
 /* Optional: slightly smaller avatar on narrow screens */
 @media (max-width:900px) {
   .avatar { width: 140px; height: 140px; }
-}
-
-/* ====== Beautify "View All Lecture Notes" without increasing size ====== */
-/* Keeps width 320px on large screens, but improves visuals and hover */
-.notes-view-all .notes-view-all-btn {
-  width: 320px;                  /* keep original width as requested */
-  height: 36px;
-  line-height: 36px;
-  display: inline-flex;          /* make it easier to align icon + text */
-  align-items: center;
-  justify-content: center;
-  gap: 8px;                      /* space between icon and text */
-  padding: 0 12px;
-  border-radius: 10px;           /* slightly rounder */
-  background: linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%);
-  color: var(--accent-2);
-  text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 700;
-  border: 1px solid rgba(95,158,160,0.14);
-  box-shadow: inset 0 -2px 0 rgba(0,0,0,0.03), 0 6px 16px rgba(95,158,160,0.06);
-  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
-}
-
-/* hover / focus effects for affordance (slight lift, stronger shadow) */
-.notes-view-all .notes-view-all-btn:hover,
-.notes-view-all .notes-view-all-btn:focus {
-  transform: translateY(-3px);
-  box-shadow: 0 16px 36px rgba(95,158,160,0.12);
-  background: linear-gradient(180deg, #ffffff 0%, #eef7f8 100%);
-  outline: none;
-}
-
-/* Ensure the button still fits small screens without exceeding width */
-@media (max-width: 600px) {
-  .notes-view-all .notes-view-all-btn {
-    width: 100%;
-    max-width: 320px;
-    justify-content: center;
-  }
-}
-
-/* Small tweak to the emoji/icon so it aligns vertically inside the button */
-.notes-view-all .notes-view-all-btn span {
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-}
-
-/* Accessibility: visible focus ring */
-.notes-view-all .notes-view-all-btn:focus-visible {
-  box-shadow: 0 0 0 4px rgba(135,206,235,0.18);
-  border-color: var(--accent-2);
 }
 
