@@ -459,6 +459,50 @@
                 background: #1a202c;
             }
         }
+        .profile-moved-copy {
+            max-width: 760px;
+            margin-bottom: 24px;
+            color: #5d6a70;
+            font-size: 1.05rem;
+        }
+
+        .profile-redirects {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .profile-redirect-link {
+            display: grid;
+            gap: 6px;
+            padding: 22px;
+            border: 1px solid rgba(95, 158, 160, 0.18);
+            border-radius: 14px;
+            background: linear-gradient(135deg, #f0faff 0%, #e6f7ff 100%);
+            color: #315f63;
+            text-decoration: none;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .profile-redirect-link:hover,
+        .profile-redirect-link:focus-visible {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 24px rgba(40, 79, 82, 0.13);
+        }
+
+        .profile-redirect-link strong {
+            font-size: 1.15rem;
+        }
+
+        .profile-redirect-link small {
+            color: #66757a;
+        }
+
+        @media (max-width: 640px) {
+            .profile-redirects {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="lang-en">
@@ -476,254 +520,32 @@
 
     <!-- 主要内容 -->
     <main class="container">
-        <!-- 个人信息 -->
         <section class="section-card">
-            <h2 class="section-title lang-en">Personal Information</h2>
-            <h2 class="section-title lang-zh">个人信息</h2>
-            
-            <div class="info-grid">
-                <div class="info-item">
-                    <div class="info-label lang-en">Gender</div>
-                    <div class="info-label lang-zh">性别</div>
-                    <div class="info-value lang-en">Male</div>
-                    <div class="info-value lang-zh">男</div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="info-label lang-en">Major</div>
-                    <div class="info-label lang-zh">专业</div>
-                    <div class="info-value lang-en">Computer Science and Technology(Minor in Mathematics and Applied Mathematics)</div>
-                    <div class="info-value lang-zh">计算机科学与技术(副修数学与应用数学)</div>
-                </div>
-                
-                <div class="info-item">
-                    <div class="info-label lang-en">College</div>
-                    <div class="info-label lang-zh">学院</div>
-                    <div class="info-value lang-en">School of Data Science (SDS), CUHK-Shenzhen</div>
-                    <div class="info-value lang-zh">数据科学学院（SDS）·香港中文大学（深圳）</div>
-                </div>
+            <h2 class="section-title lang-en">Profile Content Reorganized</h2>
+            <h2 class="section-title lang-zh">个人资料已重新归类</h2>
 
-                <div class="info-item">
-                    <div class="info-label lang-en">Teaching Assistant and Internship</div>
-                    <div class="info-label lang-zh">助教与实习</div>
+            <p class="profile-moved-copy lang-en">
+                To reduce duplicated information, personal experience and skills now live in Learn More,
+                while academic performance and honors are grouped with Publications.
+            </p>
+            <p class="profile-moved-copy lang-zh">
+                为减少重复信息，个人经历与技能现已归入 Learn More，成绩、学业与荣誉则归入 Publications。
+            </p>
 
-                    <div class="info-value lang-en">Undergraduate teaching assistant</div>
-                    <div class="info-value lang-zh">本科生助教</div>
-                </div>
-                <div class="info-item">
-                    <div class="info-label lang-en">Student Organization</div>
-                    <div class="info-label lang-zh">学生组织职务</div>
-                    <div class="info-value lang-en">YMCA · Secretary of Organization Department</div>
-                    <div class="info-value lang-zh">青年会·组织部干事</div>
-                </div>
+            <div class="profile-redirects">
+                <a href="about.html#experience" class="profile-redirect-link">
+                    <strong class="lang-en">Learn More →</strong>
+                    <strong class="lang-zh">个人经历与技能 →</strong>
+                    <small class="lang-en">Background, teaching experience and technical competencies</small>
+                    <small class="lang-zh">个人背景、教学经历与专业能力</small>
+                </a>
 
-                <div class="info-item">
-                    <div class="info-label lang-en">Interest Points</div>
-                    <div class="info-label lang-zh">兴趣点</div>
-                    <div class="info-value lang-en">Mathematics and Applied Mathematics; Machine Learning and Artificial Intelligence; Large Language Models, Embodied Intelligence, Human-Computer Interaction and Dialogue Systems, Logical Reasoning, Sentiment Analysis and Support in LLM</div>
-                    <div class="info-value lang-zh">数学与应用数学；机器学习与人工智能；大语言模型，具身智能，人机交互与对话系统，LLM中对逻辑推演与情感分析和支持</div>
-                </div>
-
-                
-            </div>
-            <div class="kai-font">一个人的命运啊，当然要靠自我奋斗，但是也要考虑到历史的进程</div>
-        </section>
-
-        <!-- 技能 -->
-        <section class="section-card">
-            <h2 class="section-title lang-en">Skills & Competencies</h2>
-            <h2 class="section-title lang-zh">所会技能</h2>
-            
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <div class="skill-icon"></div>
-                    <div>
-                        <strong class="lang-en">Programming Languages:</strong>
-                        <strong class="lang-zh">编程语言：</strong>
-                        Python, Java, C++, HTML
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-icon"></div>
-                    <div>
-                        <strong class="lang-en">Mathematical Abilities:</strong>
-                        <strong class="lang-zh">数学能力：</strong>
-                        <span class="lang-en">Mathematical Analysis, Advanced Algebra, Probability Theory and Mathematical Statistics, Optimization, Discrete Mathematics and Mathematical Modeling</span>
-                        <span class="lang-zh">数学分析，高等代数，概率论与数理统计，最优化，离散数学与数学建模</span>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-icon"></div>
-                    <div>
-                        <strong class="lang-en">Data Science:</strong>
-                        <strong class="lang-zh">数据科学：</strong>
-                        <span class="lang-en">Possesses a certain level of data preprocessing ability, understands basic algorithms, and can establish basic analytical models</span>
-                        <span class="lang-zh">具有一定的数据预处理能力，了解基本的算法并且可以建立基本的分析模型</span>
-                    </div>
-                </div>
-                
-                <div class="skill-item">
-                    <div class="skill-icon"></div>
-                    <div>
-                        <strong class="lang-en">Machine Learning:</strong>
-                        <strong class="lang-zh">机器学习：</strong>
-                        <span class="lang-en">Proficiently understand basic machine learning algorithm models, basic deep learning and neural network training and testing, and understand important concepts of reinforcement learning</span>
-                        <span class="lang-zh">熟练理解基本的机器学习算法模型，基本深度学习与神经网络训练检验，了解强化学习重要概念</span>
-                    </div>
-                </div>
-
-                 <div class="skill-item">
-                    <div class="skill-icon"></div>
-                    <div>
-                        <strong class="lang-en">LLM:</strong>
-                        <strong class="lang-zh">大语言模型：</strong>
-                        <span class="lang-en">Have knowledge of large language models and experience in SFT fine-tuning, with experience in fine-tuning single-GPU small models and 4090 distributed training of 7B large models</span>
-                        <span class="lang-zh">了解大语言模型并且有SFT微调经验，单卡小模型微调及4090分布式训练7B大模型经历</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 获奖情况 -->
-        <section class="section-card">
-            <h2 class="section-title lang-en">Awards & Honors</h2>
-            <h2 class="section-title lang-zh">曾获奖项</h2>
-            
-            <div class="awards-list">
-                <div class="award-item">
-                    <div class="award-icon">🏆</div>
-                    <div>
-                        <span class="lang-en">Third Prize in Guangdong Province, Mathematics Group, 2024 National College Student Mathematics Competition</span>
-                        <span class="lang-zh">2024年全国大学生数学竞赛·数学组广东省三等奖</span>
-                    </div>
-                </div>
-
-                <div class="awards-list">
-                <div class="award-item">
-                    <div class="award-icon">🏆</div>
-                    <div>
-                        <span class="lang-en">2024 Academic Year School of Data Science Dean List & Shaw Scholarship <br> </span>
-                        <span class="lang-zh">2024学年数据科学学院Dean list＆逸夫奖学金 <br> </span>
-                        <span class="lang-en">2024 Academic Year SDS Academic Performance Scholarship</span>
-                        <span class="lang-zh">2024学年数据科学学院学业奖学金</span>
-                    </div>
-                </div>
-                                
-                <div class="award-item">
-                    <div class="award-icon">🥇</div>
-                    <div>
-                        <span class="lang-en">First Prize of Guangdong Province in the 2025 National Undergraduate Mathematical Modeling Contest</span>
-                        <span class="lang-zh">2025年全国大学生数学建模·广东省一等奖</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 成绩单 -->
-        <section class="section-card">
-            <h2 class="section-title lang-en">Academic Performance</h2>
-            <h2 class="section-title lang-zh">成績與學業</h2>
-
-            <!-- CET-4 -->
-            <div class="transcript-section">
-                <div class="transcript-year">
-                    <span class="lang-en">College English Test Band 4 (CET-4)</span>
-                    <span class="lang-zh">大学英语四级（CET-4）</span>
-                </div>
-                <div class="transcript-grid">
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">Score</div>
-                        <div class="transcript-label lang-zh">成绩</div>
-                        <div class="transcript-image-container">
-                            <img src="transCET4.jpg" alt="CET-4 Score Certificate" loading="lazy">
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第一学年 -->
-            <div class="transcript-section">
-                <div class="transcript-year">
-                    <span class="lang-en">First Academic Year</span>
-                    <span class="lang-zh">第一学年</span>
-                </div>
-                
-                <div class="transcript-grid">
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">GPA:3.79</div>
-                        <div class="transcript-label lang-zh">绩点:3.79</div>
-                    </div>
-                    
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">Ranking</div>
-                        <div class="transcript-label lang-zh">排名</div>
-                        <div class="transcript-image-container">
-                            <div class="transcript-text">
-                                <p class="lang-en">
-                                    CGPA ranks 18th among 236 students in Computer Science and Technology<br>
-                                    CGPA ranks 33rd among 570 students in School of Data Science
-                                </p>
-                                <p class="lang-zh">
-                                    CGPA处于计算机科学与技术专业同期236名同学中第18名<br>
-                                    CGPA处于数据科学学院同期570名同学中第33名
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- 第二学年 -->
-            <div class="transcript-section">
-                <div class="transcript-year">
-                    <span class="lang-en">Second Academic Year</span>
-                    <span class="lang-zh">第二学年</span>
-                </div>
-                <div class="transcript-grid">
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">GPA</div>
-                        <div class="transcript-label lang-zh">绩点</div>
-                        <div class="transcript-image-container">
-                            <div class="transcript-placeholder">
-                                <p class="lang-en">📄 certificate</p>
-                                <p class="lang-zh">📄 绩点证明</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="transcript-card">
-                        <div class="transcript-label lang-en">Ranking</div>
-                        <div class="transcript-label lang-zh">排名</div>
-                        <div class="transcript-image-container">
-                            <div class="transcript-text">
-                                <p class="lang-en">Top ?% in major<br><br>Top ?% in grade</p>
-                                <p class="lang-zh">专业排名前？%<br><br>年级排名前？%</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- 联系方式 -->
-        <section class="section-card">
-            <h2 class="section-title lang-en">Contact Information</h2>
-            <h2 class="section-title lang-zh">联系方式</h2>
-            
-            <div class="contact-section">
-                <div class="contact-icon-box">
-                    💬
-                </div>
-                <div class="contact-info">
-                    <div class="contact-label lang-en">WeChat</div>
-                    <div class="contact-label lang-zh">微信</div>
-                    <div class="contact-id">ID: wintwelingWu</div>
-                </div>
-                <div class="qr-code-container">
-                    <img src="Wechat-QR.jpg" alt="WeChat QR Code" loading="lazy">
-                </div>
+                <a href="publications.html#academic-record" class="profile-redirect-link">
+                    <strong class="lang-en">Publications →</strong>
+                    <strong class="lang-zh">学术记录与成果 →</strong>
+                    <small class="lang-en">Academic performance, honors and research output</small>
+                    <small class="lang-zh">成绩、荣誉与研究成果</small>
+                </a>
             </div>
         </section>
     </main>

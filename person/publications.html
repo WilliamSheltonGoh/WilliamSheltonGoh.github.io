@@ -686,6 +686,127 @@
                 border: 1px solid #ddd;
             }
         }
+        /* Consolidated academic record from the former profile page */
+        .academic-record-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 1.45fr) minmax(280px, 0.8fr);
+            gap: 22px;
+            align-items: start;
+        }
+
+        .record-panel {
+            min-width: 0;
+            padding: 24px;
+            border: 1px solid rgba(95, 158, 160, 0.16);
+            border-radius: 16px;
+            background: white;
+            box-shadow: 0 10px 26px rgba(40, 79, 82, 0.09);
+        }
+
+        .record-panel > h3 {
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #87ceeb;
+            color: #315f63;
+            font-size: 1.25rem;
+        }
+
+        .transcript-section {
+            margin-bottom: 24px;
+        }
+
+        .transcript-section:last-child {
+            margin-bottom: 0;
+        }
+
+        .transcript-year {
+            margin-bottom: 12px;
+            padding: 10px 12px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #eaf8ff 0%, #d9f2f4 100%);
+            color: #376f73;
+            font-weight: 750;
+        }
+
+        .transcript-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+            gap: 14px;
+        }
+
+        .transcript-card {
+            min-width: 0;
+            padding: 16px;
+            border: 1px solid rgba(95, 158, 160, 0.2);
+            border-radius: 12px;
+            background: #fbfdfe;
+        }
+
+        .transcript-label {
+            margin-bottom: 10px;
+            color: #315f63;
+            font-weight: 750;
+        }
+
+        .transcript-image-container {
+            min-height: 132px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-radius: 9px;
+            background: #f3f7f8;
+        }
+
+        .transcript-image-container img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .transcript-text,
+        .transcript-placeholder {
+            padding: 18px;
+            color: #627276;
+            text-align: center;
+        }
+
+        .awards-list {
+            display: grid;
+            gap: 14px;
+        }
+
+        .award-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 16px;
+            border-left: 4px solid #f6c344;
+            border-radius: 11px;
+            background: linear-gradient(135deg, #fffaf0 0%, #fff2d7 100%);
+        }
+
+        .award-icon {
+            flex: 0 0 auto;
+            font-size: 1.35rem;
+            line-height: 1.2;
+        }
+
+        @media (max-width: 900px) {
+            .academic-record-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .record-panel {
+                padding: 18px;
+            }
+
+            .transcript-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body class="lang-en">
@@ -698,6 +819,7 @@
                     <li><a href="#profile" class="lang-en">Profile</a><a href="#profile" class="lang-zh">个人简介</a></li>
                     <li><a href="#research" class="lang-en">Research</a><a href="#research" class="lang-zh">研究方向</a></li>
                     <li><a href="#education" class="lang-en">Education</a><a href="#education" class="lang-zh">教育经历</a></li>
+                    <li><a href="#academic-record" class="lang-en">Academic Record</a><a href="#academic-record" class="lang-zh">学术记录</a></li>
                     <li><a href="#papers" class="lang-en">Publications</a><a href="#papers" class="lang-zh">学术论文</a></li>
                 </ul>
             </nav>
@@ -843,7 +965,137 @@
         </div>
     </section>
 
-    <!-- 学术论文 -->
+    <!-- 从 Academic Profile 整合而来的成绩与荣誉 -->
+    <section id="academic-record" class="container section">
+        <h2 class="section-title fade-in">
+            <span class="lang-en">Academic Record &amp; Honors</span>
+            <span class="lang-zh">学术记录与荣誉</span>
+        </h2>
+
+        <div class="academic-record-layout fade-in">
+            <article class="record-panel performance-panel">
+                <h3>
+                    <span class="lang-en">Academic Performance</span>
+                    <span class="lang-zh">成绩与学业</span>
+                </h3>
+<!-- CET-4 -->
+            <div class="transcript-section">
+                <div class="transcript-year">
+                    <span class="lang-en">College English Test Band 4 (CET-4)</span>
+                    <span class="lang-zh">大学英语四级（CET-4）</span>
+                </div>
+                <div class="transcript-grid">
+                    <div class="transcript-card">
+                        <div class="transcript-label lang-en">Score</div>
+                        <div class="transcript-label lang-zh">成绩</div>
+                        <div class="transcript-image-container">
+                            <img src="transCET4.jpg" alt="CET-4 Score Certificate" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第一学年 -->
+            <div class="transcript-section">
+                <div class="transcript-year">
+                    <span class="lang-en">First Academic Year</span>
+                    <span class="lang-zh">第一学年</span>
+                </div>
+
+                <div class="transcript-grid">
+                    <div class="transcript-card">
+                        <div class="transcript-label lang-en">GPA:3.79</div>
+                        <div class="transcript-label lang-zh">绩点:3.79</div>
+                    </div>
+
+                    <div class="transcript-card">
+                        <div class="transcript-label lang-en">Ranking</div>
+                        <div class="transcript-label lang-zh">排名</div>
+                        <div class="transcript-image-container">
+                            <div class="transcript-text">
+                                <p class="lang-en">
+                                    CGPA ranks 18th among 236 students in Computer Science and Technology<br>
+                                    CGPA ranks 33rd among 570 students in School of Data Science
+                                </p>
+                                <p class="lang-zh">
+                                    CGPA处于计算机科学与技术专业同期236名同学中第18名<br>
+                                    CGPA处于数据科学学院同期570名同学中第33名
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 第二学年 -->
+            <div class="transcript-section">
+                <div class="transcript-year">
+                    <span class="lang-en">Second Academic Year</span>
+                    <span class="lang-zh">第二学年</span>
+                </div>
+                <div class="transcript-grid">
+                    <div class="transcript-card">
+                        <div class="transcript-label lang-en">GPA</div>
+                        <div class="transcript-label lang-zh">绩点</div>
+                        <div class="transcript-image-container">
+                            <div class="transcript-placeholder">
+                                <p class="lang-en">📄 certificate</p>
+                                <p class="lang-zh">📄 绩点证明</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="transcript-card">
+                        <div class="transcript-label lang-en">Ranking</div>
+                        <div class="transcript-label lang-zh">排名</div>
+                        <div class="transcript-image-container">
+                            <div class="transcript-text">
+                                <p class="lang-en">Top ?% in major<br><br>Top ?% in grade</p>
+                                <p class="lang-zh">专业排名前？%<br><br>年级排名前？%</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </article>
+
+            <article class="record-panel honors-panel">
+                <h3>
+                    <span class="lang-en">Awards &amp; Honors</span>
+                    <span class="lang-zh">奖项与荣誉</span>
+                </h3>
+<div class="awards-list">
+                <div class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <div>
+                        <span class="lang-en">Third Prize in Guangdong Province, Mathematics Group, 2024 National College Student Mathematics Competition</span>
+                        <span class="lang-zh">2024年全国大学生数学竞赛·数学组广东省三等奖</span>
+                    </div>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-icon">🏆</div>
+                    <div>
+                        <span class="lang-en">2024 Academic Year School of Data Science Dean List & Shaw Scholarship <br> </span>
+                        <span class="lang-zh">2024学年数据科学学院Dean list＆逸夫奖学金 <br> </span>
+                        <span class="lang-en">2024 Academic Year SDS Academic Performance Scholarship</span>
+                        <span class="lang-zh">2024学年数据科学学院学业奖学金</span>
+                    </div>
+                </div>
+
+                <div class="award-item">
+                    <div class="award-icon">🥇</div>
+                    <div>
+                        <span class="lang-en">First Prize of Guangdong Province in the 2025 National Undergraduate Mathematical Modeling Contest</span>
+                        <span class="lang-zh">2025年全国大学生数学建模·广东省一等奖</span>
+                    </div>
+                </div>
+            </div>
+            </article>
+        </div>
+    </section>
+
++    <!-- 学术论文 -->
     <section id="papers" class="container section">
         <h2 class="section-title fade-in">
             <span class="lang-en">Selected Publications</span>
