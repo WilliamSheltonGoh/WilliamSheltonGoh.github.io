@@ -807,6 +807,276 @@
                 grid-template-columns: 1fr;
             }
         }
+        /* Compact, academic-first layout */
+        .container {
+            padding: 34px 20px;
+        }
+
+        .section {
+            margin-bottom: 42px;
+        }
+
+        .section-title {
+            margin-bottom: 22px;
+            padding-bottom: 9px;
+            border-bottom-width: 2px;
+            font-size: clamp(1.55rem, 3vw, 2.15rem);
+            text-align: left;
+        }
+
+        .section-title::after {
+            left: 0;
+            width: 64px;
+            height: 2px;
+            bottom: -2px;
+            transform: none;
+        }
+
+        .profile-grid {
+            grid-template-columns: 172px minmax(0, 1fr);
+            gap: 22px;
+            align-items: start;
+            padding: 22px;
+            border-radius: 12px;
+            box-shadow: 0 5px 14px rgba(40, 79, 82, 0.08);
+        }
+
+        .profile-image {
+            max-width: 172px;
+        }
+
+        .avatar-container {
+            border-width: 3px;
+            border-radius: 12px;
+            box-shadow: 0 5px 13px rgba(135, 206, 235, 0.22);
+        }
+
+        .scholar-badge {
+            width: 42px;
+            height: 42px;
+            right: -8px;
+            bottom: -8px;
+            font-size: 1.15rem;
+        }
+
+        .profile-info {
+            display: grid;
+            grid-template-columns: minmax(230px, 0.85fr) minmax(0, 1.15fr);
+            gap: 20px;
+            padding: 0;
+        }
+
+        .profile-info .info-section {
+            margin-bottom: 0;
+        }
+
+        .info-section h3 {
+            margin-bottom: 9px;
+            padding-bottom: 7px;
+            border-bottom-width: 1px;
+            font-size: 1.05rem;
+        }
+
+        .info-list li {
+            padding: 8px 0;
+        }
+
+        .bio-text {
+            font-size: 0.91rem;
+            line-height: 1.55;
+        }
+
+        .research-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+            margin-top: 0;
+        }
+
+        .research-card {
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(40, 79, 82, 0.08);
+        }
+
+        .research-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(135, 206, 235, 0.16);
+        }
+
+        .research-icon {
+            width: 42px;
+            height: 42px;
+            margin-bottom: 12px;
+            font-size: 1.2rem;
+        }
+
+        .research-card h3 {
+            margin-bottom: 8px;
+            font-size: 1.03rem;
+            line-height: 1.35;
+        }
+
+        .research-card p {
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        .education-compact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 14px;
+        }
+
+        .education-item {
+            margin-bottom: 0;
+            padding: 18px;
+            border-left: 4px solid #87ceeb;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(40, 79, 82, 0.07);
+        }
+
+        .education-item::before {
+            display: none;
+        }
+
+        .education-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 16px rgba(135, 206, 235, 0.14);
+        }
+
+        .education-period {
+            margin-bottom: 5px;
+            font-size: 0.92rem;
+        }
+
+        .education-degree,
+        .education-school {
+            margin-bottom: 5px;
+        }
+
+        .academic-record-layout {
+            gap: 14px;
+        }
+
+        .record-panel {
+            padding: 18px;
+            border-radius: 12px;
+            box-shadow: 0 5px 14px rgba(40, 79, 82, 0.08);
+        }
+
+        .record-panel > h3 {
+            margin-bottom: 14px;
+            padding-bottom: 8px;
+            font-size: 1.08rem;
+        }
+
+        .transcript-section {
+            margin-bottom: 16px;
+        }
+
+        .transcript-year {
+            margin-bottom: 9px;
+            padding: 7px 9px;
+            border-radius: 8px;
+            font-size: 0.88rem;
+        }
+
+        .transcript-grid {
+            gap: 10px;
+        }
+
+        .transcript-card {
+            padding: 12px;
+            border-radius: 9px;
+        }
+
+        .transcript-label {
+            margin-bottom: 7px;
+            font-size: 0.88rem;
+        }
+
+        .transcript-image-container {
+            min-height: 104px;
+        }
+
+        .transcript-text,
+        .transcript-placeholder {
+            padding: 12px;
+            font-size: 0.85rem;
+        }
+
+        .awards-list {
+            gap: 10px;
+        }
+
+        .award-item {
+            gap: 9px;
+            padding: 12px;
+            border-radius: 9px;
+            font-size: 0.88rem;
+        }
+
+        .award-icon {
+            font-size: 1.1rem;
+        }
+
+        .papers-grid {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 14px;
+            margin-top: 0;
+        }
+
+        .paper-card {
+            padding: 18px;
+            border-radius: 10px;
+            box-shadow: 0 4px 11px rgba(40, 79, 82, 0.08);
+        }
+
+        .paper-title {
+            font-size: 1.05rem;
+            margin-bottom: 7px;
+        }
+
+        .paper-venue {
+            margin-bottom: 9px;
+            font-size: 0.84rem;
+        }
+
+        .paper-abstract {
+            font-size: 0.88rem;
+            line-height: 1.5;
+        }
+
+        @media (max-width: 900px) {
+            .profile-grid,
+            .profile-info,
+            .research-grid,
+            .education-compact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-image {
+                max-width: 140px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 26px 15px;
+            }
+
+            .section {
+                margin-bottom: 32px;
+            }
+
+            .profile-grid,
+            .record-panel,
+            .paper-card,
+            .research-card,
+            .education-item {
+                padding: 15px;
+            }
+        }
     </style>
 </head>
 <body class="lang-en">
@@ -816,11 +1086,11 @@
             <a href="../index.html" class="logo">WilliamShelton Goh</a>
             <nav>
                 <ul class="nav-menu">
-                    <li><a href="#profile" class="lang-en">Profile</a><a href="#profile" class="lang-zh">个人简介</a></li>
+                    <li><a href="#profile" class="lang-en">Overview</a><a href="#profile" class="lang-zh">概览</a></li>
                     <li><a href="#research" class="lang-en">Research</a><a href="#research" class="lang-zh">研究方向</a></li>
                     <li><a href="#education" class="lang-en">Education</a><a href="#education" class="lang-zh">教育经历</a></li>
                     <li><a href="#academic-record" class="lang-en">Academic Record</a><a href="#academic-record" class="lang-zh">学术记录</a></li>
-                    <li><a href="#papers" class="lang-en">Publications</a><a href="#papers" class="lang-zh">学术论文</a></li>
+                    <li><a href="#papers" class="lang-en">Research Output</a><a href="#papers" class="lang-zh">研究成果</a></li>
                 </ul>
             </nav>
             <div class="lang-buttons">
@@ -834,8 +1104,8 @@
     <!-- 个人简介 -->
     <section id="profile" class="container section">
         <h2 class="section-title fade-in">
-            <span class="lang-en">Personal Academic Profile and Publications</span>
-            <span class="lang-zh">个人学术简介和出版</span>
+            <span class="lang-en">Academic Profile</span>
+            <span class="lang-zh">学术档案</span>
         </h2>
         
         <div class="profile-grid fade-in">
@@ -893,7 +1163,8 @@
             <span class="lang-zh">主要研究方向</span>
         </h2>
             
-        <div class="research-card fade-in">
+        <div class="research-grid">
+            <div class="research-card fade-in">
                 <div class="research-icon">⚡</div>
                 <h3 class="lang-en">Mathematics and Applied Mathematics, Optimization analysis</h3>
                 <h3 class="lang-zh">数学与应用数学，最优化分析 </h3>
@@ -904,8 +1175,6 @@
                     致力于利用数学分析、分类划归、变换构造的数学思维和多样化的数学原理与数学工具，赋能实时AI应用场景。
                 </p>
             </div>
-        
-        <div class="research-grid">
             <div class="research-card fade-in">
                 <div class="research-icon">🧠</div>
                 <h3 class="lang-en">ML＆AI</h3>
@@ -941,8 +1210,7 @@
             <span class="lang-en">Education Background</span>
             <span class="lang-zh">教育经历</span>
         </h2>
-        
-            
+        <div class="education-compact-grid">
             <div class="education-item fade-in">
                 <div class="education-period">2021 - 2024</div>
                 <div class="education-school lang-en">Zhejiang Zhenhai High School</div>
@@ -1098,8 +1366,8 @@
 +    <!-- 学术论文 -->
     <section id="papers" class="container section">
         <h2 class="section-title fade-in">
-            <span class="lang-en">Selected Publications</span>
-            <span class="lang-zh">学术论文与研究</span>
+            <span class="lang-en">Research Output</span>
+            <span class="lang-zh">研究成果</span>
         </h2>
         
         <div class="papers-grid">
